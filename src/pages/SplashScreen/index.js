@@ -1,11 +1,16 @@
-import React from 'react';
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import { Logo } from '../../assets';
 
-const SplashScreen = () => {
+const SplashScreen = ({ navigation }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.replace('SignIn');
+    }, 200);
+  }, [navigation]);
+
   return (
     <>
-      <StatusBar backgroundColor={'#FFC700'} />
       <View style={styles.container}>
         <Logo />
         <Text style={styles.text}>FoodMarket</Text>
