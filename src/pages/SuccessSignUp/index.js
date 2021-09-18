@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { IllSuccessSignUp } from '../../assets';
 import { Button } from '../../components';
 
-const SuccessSignUp = () => {
+const SuccessSignUp = ({ navigation }) => {
   return (
     <View style={styles.page}>
       <IllSuccessSignUp />
@@ -14,7 +14,12 @@ const SuccessSignUp = () => {
         </Text>
       </View>
       <View style={styles.buttonContainer}>
-        <Button text="Find Foods" onPress={() => {}} />
+        <Button
+          text="Find Foods"
+          onPress={() => {
+            navigation.replace('MainApp');
+          }}
+        />
       </View>
     </View>
   );
