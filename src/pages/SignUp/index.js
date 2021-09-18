@@ -1,31 +1,36 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Button, Gap, Header, TextInput } from '../../components';
 
 const SignUp = ({ navigation }) => {
   return (
-    <View style={styles.page}>
-      <Header title="Sign Up" subtitle="Register and Eat" onBack={() => {}} />
-      <View style={styles.container}>
-        <View style={styles.photo}>
-          <View style={styles.borderPhoto}>
-            <View style={styles.photoContainer}>
-              <Text style={styles.addPhoto}>Add Photo</Text>
+    <ScrollView>
+      <View style={styles.page}>
+        <Header title="Sign Up" subtitle="Register and Eat" onBack={() => {}} />
+        <View style={styles.container}>
+          <View style={styles.photo}>
+            <View style={styles.borderPhoto}>
+              <View style={styles.photoContainer}>
+                <Text style={styles.addPhoto}>Add Photo</Text>
+              </View>
             </View>
           </View>
+          <TextInput label="Full Name" placeholder="Type your full name" />
+          <Gap height={16} />
+          <TextInput
+            label="Email Address"
+            placeholder="Type your email address"
+          />
+          <Gap height={16} />
+          <TextInput label="Password" placeholder="Type your password" />
+          <Gap height={16} />
+          <Button
+            text="Continue"
+            onPress={() => navigation.navigate('SignUpAddress')}
+          />
         </View>
-        <TextInput label="Full Name" placeholder="Type your full name" />
-        <Gap height={16} />
-        <TextInput
-          label="Email Address"
-          placeholder="Type your email address"
-        />
-        <Gap height={16} />
-        <TextInput label="Password" placeholder="Type your password" />
-        <Gap height={16} />
-        <Button text="Continue" />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
